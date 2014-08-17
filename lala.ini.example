@@ -1,0 +1,5 @@
+[lala]
+watchlist=http://rss.imdb.com/list/ls075082611/
+min_quality=710
+max_quality=730
+open_cmd=open
