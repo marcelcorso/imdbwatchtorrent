@@ -16,7 +16,7 @@ doc.css('guid').map{|t| t.content.split('/').last}.each_slice(50).each do |batch
   listimdb = JSON.parse r.read
   listimdb['MovieList'].each do |movie|
     match = /(\d+)p/.match(movie['Quality'])
-    if match && match[1].to_i > config["lala"]["min_quality"].to_i && match[1].to_i < config["lala"]["max_quality"]
+    if match && match[1].to_i > config["lala"]["min_quality"].to_i && match[1].to_i < config["lala"]["max_quality"].to_i
       # you could call xdg-open movie["TorrentMagnetUrl"] here
       system("%s %s" % [config["lala"]["open_cmd"], movie["TorrentMagnetUrl"]]) unless config["lala"]["open_cmd"].nil?
       puts movie['MovieTitle'] + ": " + movie["ImdbLink"] # + " - " + movie["TorrentMagnetUrl"]
