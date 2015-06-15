@@ -11,5 +11,5 @@ doc.css('guid').map{|t| t.content.split('/').last}.each do |one|
   parsed = JSON.parse r.read
   next unless parsed["data"]["movie_count"].to_i > 0
   movie  = parsed["data"]["movies"].first
-  puts movie['title_long'] + ": " + movie["url"] # + " - " + movie["TorrentMagnetUrl"] 
+  puts movie['title_long'] + ": " + "http://www.imdb.com/title/#{one}" # + " - " + movie["TorrentMagnetUrl"] 
 end
